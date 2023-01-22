@@ -12,7 +12,16 @@ def getNews():
     news_data = requests.get(url).json()
     articles= news_data['articles']
     return render_template('news.html', articles=articles)
-
+    
+@app.route('/search', methods=['GET', 'POST'])
+def searchNews():
+    if request.method == 'POST':
+        keyword = request.form['query']
+        url = ('http://newsapi.org/v2/everything?'
+               'q={}&apiKey={}').format(keyword,NewsAPIKey)
+        searcch_data = requests.get(url).json()
+        search_articles= searcch_data['articles']
+        return render_template('search.html', search_articles=search_articles)
 
 if __name__ == '__main__':
     app.run(debug=True)

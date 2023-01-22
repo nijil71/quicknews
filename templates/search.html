@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container{
+            margin-top: 50px;
+        }
+        .card{
+            margin-bottom: 20px;
+        }
+        .card-body{
+            padding: 20px;
+        }
+        .card-title{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .card-text{
+            font-size: 15px;
+            font-weight: 500;
+        }
+        /* add more styling */
+        .btn{
+            background-color: #212529;
+            color: #ffffff;
+            border: none;
+            border-radius: 0;
+        }
+        .btn:hover{
+            background-color: #ffffff;
+            color: #212529;
+        }
+        .card-img-top{
+            height: 200px;
+            object-fit: cover;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col-lg-3{
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        .col-sm{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        @media (min-width: 768px){
+            .col-sm{
+                flex: 0 0 50%;
+                max-width: 50%; 
+            }
+        }
+        @media (min-width: 992px){
+            .col-sm{
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%; 
+            }
+        }
+
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+            color: #212529;
+            letter-spacing: 1px;
+            padding-bottom: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Search Results</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!--loop through the search results-->
+            {% for article in search_articles %}
+            <div class="col-lg-3 col-md-4 col-sm">
+                <div class="card">
+                    <img src="{{ article.urlToImage }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.description }}</p>
+                        <a href="{{ article.url }}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

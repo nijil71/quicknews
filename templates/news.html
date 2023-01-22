@@ -13,6 +13,12 @@
     <div class="container">
         <h1>Quick News</h1>
         <p>Get the latest news from the world</p>
+        <br>
+        <form action="/search" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search for news" name="query">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+            </div>
 
         <div class="row">
             {% for article in articles %}
