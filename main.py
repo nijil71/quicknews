@@ -21,7 +21,7 @@ def searchNews():
                'q={}&apiKey={}').format(keyword,NewsAPIKey)
         searcch_data = requests.get(url).json()
         search_articles= searcch_data['articles']
-        return render_template('search.html', search_articles=search_articles)
+        return render_template('search.html', search_articles=search_articles, keyword=keyword)
 
 if __name__ == '__main__':
     app.run(debug=True)
