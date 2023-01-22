@@ -1,8 +1,7 @@
 import requests
-from decouple import config
 from flask import Flask, render_template, request
 
-NewsAPIKey = config('NEWS_API_KEY')
+NewsAPIKey = '6d0ef6b9337e4960a7f093652cfa6ce7'
 country='in'
 app = Flask(__name__)
 
