@@ -6,79 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        .container{
-            margin-top: 50px;
-        }
-        .card{
-            margin-bottom: 20px;
-        }
-        .card-body{
-            padding: 20px;
-        }
-        .card-title{
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .card-text{
-            font-size: 15px;
-            font-weight: 500;
-        }
-        /* add more styling */
-        .btn{
-            background-color: #212529;
-            color: #ffffff;
-            border: none;
-            border-radius: 0;
-        }
-        .btn:hover{
-            background-color: #ffffff;
-            color: #212529;
-        }
-        .card-img-top{
-            height: 200px;
-            object-fit: cover;
-        }
-        .row{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .col-lg-3{
-            flex: 0 0 25%;
-            max-width: 25%;
-        }
-        .col-sm{
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        @media (min-width: 768px){
-            .col-sm{
-                flex: 0 0 50%;
-                max-width: 50%; 
-            }
-        }
-        @media (min-width: 992px){
-            .col-sm{
-                flex: 0 0 33.333333%;
-                max-width: 33.333333%; 
-            }
-        }
+    <link rel="stylesheet" href="{{url_for('static',filename='css/search_style.css')}}">
 
-        h1{
-            font-size: 40px;
-            font-weight: bold;
-            color: #212529;
-            letter-spacing: 1px;
-            padding-bottom: 20px;
-
-        }
-        #cap{
-            text-transform: capitalize;
-        }
-
-    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('getNews')}}">Quick News</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('getNews')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="
+                {% if category == 'india' %}
+                {{url_for('categoryNews',name='india')}}
+                {% else %}
+                {{url_for('categoryNews',name='india')}}
+                {% endif %}
+            ">India</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="
+                {% if category == 'world' %}
+                {{url_for('categoryNews',name='world')}}
+                {% else %}
+                {{url_for('categoryNews',name='world')}}
+                {% endif %}
+                
+                ">World</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    {% if category == 'business' %}
+                    {{url_for('categoryNews',name='business')}}
+                    {% else %}
+                    {{url_for('categoryNews',name='business')}}
+                    {% endif %}
+                    ">Business</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    {% if category == 'sports' %}
+                    {{url_for('categoryNews',name='sports')}}
+                    {% else %}
+                    {{url_for('categoryNews',name='sports')}}
+                    {% endif %}
+                    
+                    ">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    {% if category == 'entertainment' %}
+                    {{url_for('categoryNews',name='entertainment')}}
+                    {% else %}
+                    {{url_for('categoryNews',name='entertainment')}}
+                    {% endif %}
+                    
+                    ">Entertainment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    {% if category == 'technology' %}
+                    {{url_for('categoryNews',name='technology')}}
+                    {% else %}
+                    {{url_for('categoryNews',name='technology')}}
+                    {% endif %}
+                    
+                    ">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    {% if category == 'science' %}
+                    {{url_for('categoryNews',name='science')}}
+                    {% else %}
+                    {{url_for('categoryNews',name='science')}}
+                    {% endif %}
+                    
+                    ">Science</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -105,6 +119,7 @@
     </div>
 
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
 </body>
 </html>

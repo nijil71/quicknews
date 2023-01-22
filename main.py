@@ -23,5 +23,24 @@ def searchNews():
         search_articles= searcch_data['articles']
         return render_template('search.html', search_articles=search_articles, keyword=keyword)
 
+@app.route('/category/<name>', methods=['GET', 'POST'])
+def categoryNews(name):
+    #take category name from url
+    category = name
+
+    if request.method == 'GET':
+        url = ('http://newsapi.org/v2/top-headlines?'
+               'country={}&category={}&apiKey={}').format(country,category,NewsAPIKey)
+        category_data = requests.get(url).json()
+        category_articles= category_data['articles']
+        if category_articles == []:
+                url = ('http://newsapi.org/v2/everything?'
+                'q={}&apiKey={}').format(category,NewsAPIKey)
+                category_data = requests.get(url).json()
+                category_articles= category_data['articles']
+                return render_template('category.html', category_articles=category_articles, category=category)
+        else:
+            return render_template('category.html', category_articles=category_articles, category=category)
+
 if __name__ == '__main__':
     app.run(debug=True)

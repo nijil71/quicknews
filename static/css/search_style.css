@@ -51,62 +51,21 @@
 @media (min-width: 992px){
     .col-sm{
         flex: 0 0 33.333333%;
-        max-width: 33.333333%;
+        max-width: 33.333333%; 
     }
-}
-/*make the h1 tag center */
-h1{
-    text-align: center;
-}
-p{
-    text-align: center;
 }
 
 h1{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     color: #212529;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+
 }
-p{
-    font-size: 20px;
-    font-weight: 500;
-    color: #212529;
+#cap{
+    text-transform: capitalize;
 }
-.form-control{
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #212529;
-}
-.form-control:focus{
-    box-shadow: none;
-    border-bottom: 1px solid #212529;
-}
-.btn-outline-secondary{
-    border: none;
-    border-radius: 0;
-    background-color: #212529;
-    color: #ffffff;
-}
-.btn-outline-secondary:hover{
-    background-color: #ffffff;
-    color: #212529;
-}
-/*make the search bar center */
-.input-group{
-    margin: 0 auto;
-    width: 50%;
-}
-/*make the search bar responsive */
-@media (max-width: 768px){
-    .input-group{
-        width: 100%;
-    }
-}
-/*give some space between the search bar and the cards */
-.row{
-    margin-top: 50px;
-}
-/*make the navbar responsive */
 @media (max-width: 768px){
     .navbar-nav{
         flex-direction: column;
