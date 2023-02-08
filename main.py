@@ -1,7 +1,8 @@
 import requests
 from flask import Flask, render_template, request
+from config import api_key
 
-NewsAPIKey = '6d0ef6b9337e4960a7f093652cfa6ce7'
+NewsAPIKey = api_key
 country='in'
 app = Flask(__name__)
 
