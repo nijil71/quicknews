@@ -15,7 +15,7 @@
     font-size: 15px;
     font-weight: 500;
 }
-/* add more styling */
+
 .btn{
     background-color: #212529;
     color: #ffffff;
@@ -54,7 +54,7 @@
         max-width: 33.333333%;
     }
 }
-/*make the h1 tag center */
+
 h1{
     text-align: center;
 }
@@ -91,28 +91,28 @@ p{
     background-color: #ffffff;
     color: #212529;
 }
-/*make the search bar center */
+
 .input-group{
     margin: 0 auto;
     width: 50%;
 }
-/*make the search bar responsive */
+
 @media (max-width: 768px){
     .input-group{
         width: 100%;
     }
 }
-/*give some space between the search bar and the cards */
+
 .row{
     margin-top: 50px;
 }
-/*make the navbar responsive */
+
 @media (max-width: 768px){
     .navbar-nav{
         flex-direction: column;
     }
 }
-/*make the navabr like google news */
+
 .navbar{
     padding: 0 20px;
 }
