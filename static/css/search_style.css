@@ -15,7 +15,7 @@
     font-size: 15px;
     font-weight: 500;
 }
-/* add more styling */
+
 .btn{
     background-color: #212529;
     color: #ffffff;
@@ -71,7 +71,7 @@ h1{
         flex-direction: column;
     }
 }
-/*make the navabr like google news */
+
 .navbar{
     padding: 0 20px;
 }
