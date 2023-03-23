@@ -4,7 +4,7 @@
 .card{
     margin-bottom: 20px;
 }
-/* add more style to the card */
+
 .card-body{
     padding: 20px;
 }
@@ -27,12 +27,12 @@
     background-color: #ffffff;
     color: #212529;
 }
-/*make the height of the card equal to the height of the image*/
+
 .card-img-top{
     height: 200px;
     object-fit: cover;
 }
-/*make  cards align equal height */
+
 .row{
     display: flex;
     flex-wrap: wrap;
